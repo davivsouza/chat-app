@@ -11,6 +11,7 @@ const io = new Server(server);
 
 let users: any = [];
 io.on('connection', (socket) => {
+  console.log(socket.id + 'has connected!');
   app.use((req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', '*');
@@ -18,6 +19,7 @@ io.on('connection', (socket) => {
 
     next();
   });
+
 
   socket.on('message', (message) => {
     io.emit('messageResponse', message);
@@ -38,4 +40,6 @@ io.on('connection', (socket) => {
 
 server.listen(3001, () => {
   console.log('listening on *:3001');
+  console.log(users);
+
 });
