@@ -12,5 +12,21 @@ export const GlobalStyles = createGlobalStyle`
 
   body{
     overflow-x: hidden;
+    background: #f1faee;
+
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+/* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+/* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1d3557;
   }
 `;

@@ -3,10 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width:100vw;
   height:100vh;
-  background-image: url('https://i.scdn.co/image/ab67616d0000b27396143f571be5f469cbcfa778');
   background-size: contain;
   background-position: top center;
-  background-color: #000;
+  background-color: #1d3557;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -16,7 +15,7 @@ export const Container = styled.div`
 export const UserForm = styled.form`
   width: 300px;
   margin: auto;
-  background: #fff;
+  background:  #fff;
   border-radius: 30px;
   padding: 24px 12px  ;
   display: flex;
@@ -35,8 +34,8 @@ export const UserForm = styled.form`
     width: 90%;
     padding: 8px 12px;
     outline: none;
+    border-radius: 24px;
     border: 1px solid #ccc;
-
     ::placeholder{
       color: #ccc;
     }
@@ -47,7 +46,7 @@ export const UserForm = styled.form`
     border-radius: 20px;
     border: none;
     color: #fff;
-    background: #ffba08; 
+    background: #457b9d; 
     cursor: pointer;
   }
 `;

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Socket } from "socket.io-client";
 import { Container, FormChat } from "./styles";
 interface ChatFooterProps {
@@ -7,8 +7,12 @@ interface ChatFooterProps {
 export function ChatFooter({ socket }: ChatFooterProps) {
   const [message, setMessage] = useState('')
 
+  
+
   function handleSubmit(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault();
+    
+
     if(message.trim() && localStorage.getItem('USER')){
       socket.emit('message', {
         text: message,
@@ -18,6 +22,7 @@ export function ChatFooter({ socket }: ChatFooterProps) {
       })
     }
     setMessage('');
+    window.scrollTo({top: window.screenY + 300, behavior: 'smooth'});
   }
   return (
     <Container>

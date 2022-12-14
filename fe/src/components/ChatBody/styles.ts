@@ -4,11 +4,9 @@ export const Container = styled.main`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  background: #242423;
   flex: 1;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-image: url('https://i.scdn.co/image/ab67616d0000b27396143f571be5f469cbcfa778');
   background-size: cover;
   background-repeat: no-repeat;
   background-position:  center;
@@ -31,7 +29,7 @@ export const ChatMessage = styled.div`
     }
 
   p{
-    color: #fff;
+    color: #000;
     margin-bottom: 8px;
   }
 `;
@@ -40,14 +38,15 @@ export const MessageSender = styled.div`
  margin-bottom: 24px;
  
   p{
-    background: #000;
+    background: #219ebc;
     text-align: left;
     border-radius: 30px;
-    border: 2px solid #ffd60a;
+    border: none;
     padding: 12px;
     color: #fff;
-    width: 300px;
     position: absolute;
+    max-width: 300px;
+    word-wrap: break-word;
     right: 20px;
   }
   `;
@@ -55,14 +54,15 @@ export const MessageSender = styled.div`
 export const RecipientSender = styled.div`
     margin-bottom: 24px;
   p{
-    background: #ffd60a;
+    background: #90e0ef;
     border-radius: 30px;
-    border: 2px solid #000;
+    border: none;
     padding: 12px;
     margin-top: 8px;
     color: #000;
-    width: 300px;
     position: absolute;
+    max-width: 300px;
+    word-wrap: break-word ;
     left: 20px;
   }
 `;

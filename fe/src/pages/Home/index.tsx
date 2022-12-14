@@ -12,6 +12,7 @@ export function Home({socket}: HomeProps) {
   function handleSubmit(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault();
     localStorage.setItem('USER', username)
+    localStorage.setItem('socketID', socket.id)
     socket.emit('newUser',{ username, socketID: socket.id })
     navigate('/open-chat')
   }
@@ -19,15 +20,15 @@ export function Home({socket}: HomeProps) {
   return (
     <Container>
       <UserForm onSubmit={handleSubmit}>
-        <h2>Avatar</h2>
-        <img src="https://i.kym-cdn.com/entries/icons/original/000/026/152/gigachad.jpg" alt="Gigachad" />
+        <h2>Openchat App</h2>
+        <img src="https://icon-library.com/images/chat-app-icon/chat-app-icon-0.jpg" alt="Openchat App" />
         <input
           type="text"
           placeholder="Your username"
           value={username}
           onChange={(ev) => setUsername(ev.target.value)} />
         <button type="submit">
-          Entrar no Zap Zap 2
+          Entrar no Chat
         </button>
       </UserForm>
     </Container>

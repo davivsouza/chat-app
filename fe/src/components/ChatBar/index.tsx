@@ -13,14 +13,20 @@ export function ChatBar({socket}: ChatBarProps){
   }[]>([]);
 
   const navigate = useNavigate()
+ 
   useEffect(()=> {
-      socket.on('newUserResponse', (data) => setUsers(data));
+      socket.on('newUserResponse', (data) => {
+        setUsers(data)
+      });
+
+      
   }, [socket, users])
   return (
     <Container>
       <div className="logo">
-        <img src="https://appsgeyser.io/geticon.php?widget=whatsapp%202_13754110&width=512" alt="Zap Zap 2" />
-        <h1>Zap Zap 2</h1>
+        
+        <img src="https://icon-library.com/images/chat-app-icon/chat-app-icon-0.jpg" alt="Openchat App" />
+        <strong>Openchat App</strong>
       </div>
       
       <strong>Active Users</strong>

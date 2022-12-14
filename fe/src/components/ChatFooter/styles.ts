@@ -4,22 +4,23 @@ export const Container = styled.footer`
   
 `;
 export const FormChat = styled.form`
- display: flex;
- align-items: center ;
- flex: 1;
-
+  display: flex;
+  align-items: center ;
+  padding: 24px;
  input{
   height: 40px;
-  
-  border: none;
-  width: 100%;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  width: 90%;
+  margin-right: 8px;
   outline: none;
   padding: 12px 24px;
  }
  button{
   width: 100px;
+  border-radius: 24px;
   height: 40px;
-  background: #ffc300;
+  background: #457b9d;
   text-align: center;
   display: flex;
   justify-content: center;

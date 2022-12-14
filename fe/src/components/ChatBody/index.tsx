@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ChatMessage, Container, MessageContainer, MessageSender, RecipientSender } from "./styles";
 
 
@@ -8,24 +9,25 @@ interface ChatBodyProps {
     id: string
     socketID: string
   }[]
+  lastMessageRef:  React.RefObject<HTMLDivElement>
 }
 
-export function ChatBody({ messages }: ChatBodyProps) {
-
+export function ChatBody({ messages, lastMessageRef }: ChatBodyProps) {
+ 
 
   return (
       <Container >
-        <MessageContainer>
+        <MessageContainer >
         {messages.map(message => 
           message.name === localStorage.getItem('USER') ? (
-              <ChatMessage className="you">
-              <p>{message.name}</p>
+              <ChatMessage className="you" key={message.id}>
+              <p>You</p>
                 <MessageSender>
                   <p>{message.text}</p>
                 </MessageSender>
               </ChatMessage>
           ) : (
-              <ChatMessage>
+              <ChatMessage key={message.id}>
                 <p>{message.name}</p>
                 <RecipientSender>
                   <p>{message.text}</p>
@@ -33,8 +35,9 @@ export function ChatBody({ messages }: ChatBodyProps) {
               </ChatMessage>
         )
         )}
+        <div ref={lastMessageRef}/>
+
         </MessageContainer>
-      
       
       </Container>
     
